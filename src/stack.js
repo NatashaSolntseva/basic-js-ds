@@ -1,5 +1,3 @@
-const { NotImplementedError } = require('../lib/errors');
-
 /**
  * Implement the Stack with a given interface via array.
  *
@@ -13,19 +11,26 @@ const { NotImplementedError } = require('../lib/errors');
  *
  */
 class Stack {
-  push(/* value */) {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+  constructor() {
+    this.storage = {};
+    this.size = 0;
+  }
+
+  push(element) {
+    this.size += 1;
+    this.storage[this.size] = element;
   }
 
   pop() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    let topElement = this.storage[this.size];
+    delete this.storage[this.size];
+    this.size -= 1;
+    return topElement;
   }
 
   peek() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    let topElement = this.storage[this.size];
+    return topElement;
   }
 }
 
